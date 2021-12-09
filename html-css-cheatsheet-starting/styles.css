@@ -1,0 +1,28 @@
+body {
+    background-color: #1d3557;
+    color: #f1faee;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table {
+    border: #e63946 2px solid;
+    width: 650px;
+    margin: 0 auto; 
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  color: #a8dadc;
+  text-align: center;
+}
+
+thead {
+    background-color: #457b9d
+}
+
+td {
+    border-top: 1px solid #a8dadc;
+}
