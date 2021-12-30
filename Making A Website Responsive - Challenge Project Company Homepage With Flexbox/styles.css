@@ -1,0 +1,167 @@
+/* GLOBAL STYLES */
+
+body {
+	margin: 0;
+	font-family: "Titillium Web", Roboto;
+	color: #f1faee;
+	background-color: #1d3557;
+	font-size: 22px;
+	text-align: center;
+}
+
+a {
+	color: #f1faee;
+}
+
+h2,
+h3,
+h4,
+p {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/* HEADER & NAV STYLES */
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+}
+
+.header-wrapper {
+	display: inline-flex;
+	flex: 1;
+	justify-content: center;
+	align-content: center;
+}
+
+.logo {
+	display: inline-flex;
+	float: left;
+	margin-right: 20px;
+	justify-content: center;
+	align-content: center;
+	width: 20%;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-around;
+	background-color: #457b9d;
+	width: 100%;
+}
+
+.navbar a {
+    display: inline-block;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* MISSION STYLES */
+
+.main {
+/*	
+	padding-top: 35px;
+	opacity: 0.9;
+*/
+}
+
+.mission {
+	display: flex;
+	height: 200px;
+	padding: 10px;
+	background-color: #f1faee;
+}
+
+.mission .content {
+	margin: auto;
+	width: 100%;
+	color: #000000;
+}
+
+
+/* PORTFOLIO STYLES */
+
+#portfolio {
+	min-height: 500px;
+	margin: auto;
+	padding: 25px 10px 25px 10px;
+	background-color: #f1faee;
+	color: #000000;
+}
+
+#portfolio p {
+	margin-bottom: 25px;
+}
+.companies {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.company {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.company img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	padding: 10px;
+	height: auto;
+}
+
+.company span {
+	padding: 5px;
+	min-width: 240px;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+/* TEAM STYLES */
+
+#team-container {
+	background-color: #f1faee;
+	color: #000000;
+	margin: auto;
+	padding: 25px 10px 25px 10px;
+}
+.team {
+	padding-top: 70px;
+	padding-top: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.teammate {
+	padding: 10px;
+	flex-basis: 280px;
+}
+
+.teammate img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	height: auto;
+}
+
+.contact {
+	padding-top: 25px;
+}
+.contact p{
+	font-size: 18px;
+}
+
+.copyright {
+	padding-top: 0px;
+}
