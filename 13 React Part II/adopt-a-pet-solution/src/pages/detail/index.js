@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getPetDetails } from '../../api/petfinder';
 import Hero from '../../components/hero';
-import { useParams } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
+
+import { useParams, Redirect } from 'react-router-dom';
 
 const PetDetailsPage = () => {
   const [data, setData] = useState();
