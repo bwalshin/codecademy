@@ -5,35 +5,40 @@ import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
-  const [contacts, setContacts] = useState([]);
-  const [appointments, setAppointments] = useState([]);
-
   const ROUTES = {
     CONTACTS: "/contacts",
     APPOINTMENTS: "/appointments",
   };
 
-  const addAppointment = (title, contact, date, time) => {
-    setAppointments([
-      ...appointments,
-      {
-        title: title,
-        contact: contact,
-        date, date,
-        time: time,
-      },
-    ]);
+  const defaultContacts = [
+    {
+      name: "Atanas Dimitrov",
+      phone: "07712345678",
+      email: "atanas@defaultemail.com",
+    },
+    {
+      name: "John Doe",
+      phone: "07787654321",
+      email: "john@defaultemail.com",
+    },
+  ];
+  const [contacts, setContacts] = useState(defaultContacts);
+
+  const addContact = (name, phone, email) => {
+    setContacts((prev) => {
+      return [...prev, { name: name, phone: phone, email: email }];
+    });
   };
 
-  const addContact = (name, phone, email) = > {
-    setContacts([
-      ...contacts,
-      {
-        name: name,
-        phone: phone,
-        email: email,
-      },
-    ]);
+  const [appointments, setAppointments] = useState([]);
+
+  const addAppointment = (title, contact, date, time) => {
+    setAppointments((prev) => {
+      return [
+        ...prev,
+        { title: title, contact: contact, date: date, time: time },
+      ];
+    });
   };
 
   return (
@@ -52,12 +57,14 @@ function App() {
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-             {/* Add props to ContactsPage */}
-            <ContactsPage />
+            <ContactsPage contacts={contacts} addContact={addContact} />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            {/* Add props to AppointmentsPage */}
-            <AppointmentsPage />
+            <AppointmentsPage
+              appointments={appointments}
+              addAppointment={addAppointment}
+              contacts={contacts}
+            />
           </Route>
         </Switch>
       </main>
