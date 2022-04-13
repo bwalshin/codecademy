@@ -35,7 +35,7 @@ export default function NewQuizForm() {
       addQuizForTopicId({
         name: name,
         topicId: topicId,
-        cardId: [],
+        cardId: cardIds,
         id: quizId,
       })
     );
