@@ -99,7 +99,7 @@ a:hover {
 }
 
 .project-title {
-      padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .project-title h3 {
@@ -159,8 +159,17 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
+    nav {
+      display: flex;
+      align-items: center;
+      padding: 16px 0;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
     .portrait {
         width: 50%;
+        align-self: center;
     }
 
     .about-me-container {
@@ -168,6 +177,7 @@ a {
         padding: 20px;
     }
 
-
-
+    .project img {
+      width: 90%;
+    }
 }
