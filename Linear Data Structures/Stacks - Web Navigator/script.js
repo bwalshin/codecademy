@@ -1,6 +1,6 @@
-const { current } = require('@reduxjs/toolkit');
+// const { current } = require('@reduxjs/toolkit');
 const Stack = require('./Stack.js');
- const prompt = require('prompt-sync')();
+const prompt = require('prompt-sync')();
 // ------------------------------
 // Initialization
 // ------------------------------
@@ -76,25 +76,24 @@ while(finish === false) {
 
   instructions = `${instructions}, ${quitInfo}.`;
   console.log(instructions);
-}
 
 // ------------------------------
-// User Interface Part 2
+// User Interface Part 2 (PART OF THE WHILE LOOP)
 // ------------------------------
-const answer = prompt(question);
-const lowerCaseAnswer = answer.toLowerCase();
+  const answer = prompt(question);
+  const lowerCaseAnswer = answer.toLowerCase();
 
-if(lowerCaseAnswer !== 'b' || 'n' || 'q') {
-  newPage(answer);
-} else if ((showNext === true) && (lowerCaseAnswer === 'n')) {
-  nextPage();
-} else if ((showBack === true) && (lowerCaseAnswer === 'b')) {
-  backPage();
-} else if (lowerCaseAnswer === 'b') {
-  console.log("There's nothing to show in this stack");
-} else if (lowerCaseAnswer === 'n') {
-  console.log("There's nothing to show in this stack");
-} else if (lowerCaseAnswer === 'q') {
-  finish = true;
+  if(lowerCaseAnswer !== 'b' || 'n' || 'q') {
+    newPage(answer);
+  } else if ((showNext === true) && (lowerCaseAnswer === 'n')) {
+    nextPage();
+  } else if ((showBack === true) && (lowerCaseAnswer === 'b')) {
+    backPage();
+  } else if (lowerCaseAnswer === 'b') {
+    console.log("There's nothing to show in this stack");
+  } else if (lowerCaseAnswer === 'n') {
+    console.log("There's nothing to show in this stack");
+  } else if (lowerCaseAnswer === 'q') {
+    finish = true;
+  }
 }
-
