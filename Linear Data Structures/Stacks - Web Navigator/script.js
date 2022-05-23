@@ -1,3 +1,4 @@
+const { current } = require('@reduxjs/toolkit');
 const Stack = require('./Stack.js');
 const prompt = require('prompt-sync')();
 // ------------------------------
@@ -10,6 +11,34 @@ let currentPage = 'Start Page';
 // ------------------------------
 // Helper Functions
 // ------------------------------
+showCurrentPage = (action) => {
+  console.log(`User Input: ${action}`);
+  console.log(`Current Page: ${currentPage}`);
+  console.log(`Back Page: ${backPages.peek()}`);
+  console.log(`Next Page: ${nextPages.peek()}`);
+}
+
+newPage = (page) => {
+  backPages.push(currentPage);
+  currentPage = page;
+  while(!nextPages.isEmpty()) {
+    nextPages.pop();
+  }
+
+  showCurrentPage("NEW: ");
+}
+
+backPage = () => {
+  nextPages.push(currentPage);
+  currentPage = backPages.pop();
+  showCurrentPage("BACK: ");
+}
+
+nextPage = () => {
+  backPages.push(currentPage);
+  currentPage = nextPages.pop();
+  showCurrentPage("NEXT: ");
+}
 
 /*
  * The following strings are used to prompt the user
