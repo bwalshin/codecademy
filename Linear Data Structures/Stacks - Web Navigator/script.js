@@ -1,6 +1,6 @@
 const { current } = require('@reduxjs/toolkit');
 const Stack = require('./Stack.js');
-const prompt = require('prompt-sync')();
+ const prompt = require('prompt-sync')();
 // ------------------------------
 // Initialization
 // ------------------------------
@@ -52,13 +52,14 @@ const question = 'Where would you like to go today? ';
 // ------------------------------
 // User Interface Part 1
 // ------------------------------
-const finish = false;
-const showBack = false;
-const showNext = false;
+let finish = false;
+let showBack = false;
+let showNext = false;
 
 showCurrentPage("DEAFULT: ");
 while(finish === false) {
   let instructions = baseInfo;
+
   if(backPages.peek() != null) {
     instructions = `${instructions}, ${backInfo}.`;
     showBack = true;
@@ -80,3 +81,20 @@ while(finish === false) {
 // ------------------------------
 // User Interface Part 2
 // ------------------------------
+const answer = prompt(question);
+const lowerCaseAnswer = answer.toLowerCase();
+
+if(lowerCaseAnswer !== 'b' || 'n' || 'q') {
+  newPage(answer);
+} else if ((showNext === true) && (lowerCaseAnswer === 'n')) {
+  nextPage();
+} else if ((showBack === true) && (lowerCaseAnswer === 'b')) {
+  backPage();
+} else if (lowerCaseAnswer === 'b') {
+  console.log("There's nothing to show in this stack");
+} else if (lowerCaseAnswer === 'n') {
+  console.log("There's nothing to show in this stack");
+} else if (lowerCaseAnswer === 'q') {
+  finish = true;
+}
+
